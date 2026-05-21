@@ -32,7 +32,7 @@ public class EconomyExchange {
     public EconomyExchange(final RedisEconomyPlugin plugin) {
         this.plugin = plugin;
         this.executorService = Executors.newFixedThreadPool(plugin.getConfigManager().getSettings().transactionExecutorThreads,
-                Thread.ofVirtual().factory());
+                Executors.defaultThreadFactory());
     }
 
     /**
